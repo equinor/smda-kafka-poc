@@ -16,13 +16,24 @@ public class StreamService {
 	@StreamListener("order-input-channel")
 	@SendTo("order-takeaway-output-channel")
 	public KStream<String, Order> takeAway(KStream<String, Order> order) {
-		return order.filter((k,v)-> v.getDeliveryType().equalsIgnoreCase("takeaway"));
-	}
 
-	@StreamListener("order-input-channel")
-	@SendTo("order-homedelivery-output-channel")
-	public KStream<String, Order> homeDelivery(KStream<String, Order> order) {
-		return order.filter((k,v)-> v.getDeliveryType().equalsIgnoreCase("homedelivery"));
-	}
+		return order.filter((k,v)-> {
+			if(v.getDeliveryType().equalsIgnoreCase("takeaway")) {
 
+				v.setQuantity(1000);
+				v.setDeliveryType("takeawaycustomize");
+
+			}
+			if(v.getDeliveryType().equalsIgnoreCase("homedelivery")) {
+
+				v.setDeliveryType("homedeliverycustomChange");
+				v.setQuantity(2000);
+			}
+
+			return true;
+
+		});
+
+
+	}
 }

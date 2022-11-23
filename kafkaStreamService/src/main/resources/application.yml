@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        order-input-channel:
+          destination: inputStreamsTopic
+        order-homedelivery-output-channel:
+          destination: StreamsConsumer1
+        order-takeaway-output-channel:
+          destination: StreamsConsumer2
+      kafka:
+        streams:
+          binder:
+             brokers: 20.251.51.7:9092
+   
+    
+        
+

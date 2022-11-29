@@ -1,0 +1,49 @@
+
+1) Kafka is self managed and can do operations ourself  but EventHub completely managed my Azure
+
+2) In future, if we want to change our services from cloud to some other clouds or On-premise then Kafka Is good option than EventHub.
+
+3) Kafka as a IAAS and EventHub is PAAS.
+
+4) functionally and capability wise Azure Event Hub and Apache Kafka both are similar
+
+5) If using On-primises in environment and Kafka might be good option and if using all services of Azure then EventHub can be good option
+
+6) Kafka Has many connectors to directly get the events like JDBC connector and ElsaticSearch
+
+7) Message Size in EVentHub is 256kb, No limit in Kafka
+
+8) Integrations of Azure Stream nalytics,Azure SQLDB,Azure Data Lake,Azure Machine  is handled without box integrations, No out of box Ontegrations
+
+9) Security for EventHub is SAS Tokens,Consumer Groups,Namespaces and Managed Privileges, 
+Kafka Is : Client Authentication using Kerberos,TLS Client Certificates, Encrypt Network Traffic Via TLS, Authorization Through ACLs
+
+10) High Availability in EventHub is : Replication and availability sets under the hoods to achieve HA and Fault Tolerance,
+ Kafka : HA in local Cluster, HA affetects across Global Distributed Regions
+
+11) Coding Paradigms : EVentHub Supports C#,.Net, can also use Java QPID JMS libraries, C or Python Possible Beacuse of QPID Support.
+
+12) Protocol Supports : EVentHub HTTP Rest & AMQP,Kafka Http Rest
+
+13) No On-premise Solution doesn't work in EVentHub
+
+14) $100 for 2.5Billon events, Open Source and free, Pay for the machine and people
+
+15) Tenancy : EVenthub is Multi-Tenancy and Kafka is Single Tenancy
+
+16) DIsaster Recovery : Cross Region Replication, Replication on Azure Storage Unit,Geo-redundancy for Event Hub
+
+Kafka: Replication only between Clusternodes, No easy cross region, Have to use additional software layers like Go Mirror Make tool
+
+17) For Machine critical Applications Either EVenthub or confluent is more suitable than Apache Kafka to get immediate production related issues
+
+
+
+
+
+
+
+
+
+
+
